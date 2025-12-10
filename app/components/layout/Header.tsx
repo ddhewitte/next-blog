@@ -1,9 +1,10 @@
 'use client'
 
 import Link from "next/link"
+import { urlHeaderType } from "@/app/lib/data"
 
 type HeaderProps = {
-  menu: string[],
+  menu: urlHeaderType[],
   title: string
 }
 
@@ -18,7 +19,7 @@ export default function Header({ menu, title }: HeaderProps ) {
         <nav className="hidden items-center gap-8 md:flex">
           {
             menu.map((post, index) => (
-                <Link key={index} href="#" className="text-blue-600 transition-colors">{post}</Link>
+                <Link key={index} href={post.url} className="text-blue-600 transition-colors">{post.label}</Link>
             ))
           }
         </nav>
