@@ -1,7 +1,7 @@
 export type Post = {
     id: number, 
     title: string;
-    body: string;
+    content: string;
     image: string;
 }
 
