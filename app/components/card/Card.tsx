@@ -8,7 +8,7 @@ export default async function Card() {
     <>
       {getPostLists.slice(0, 6).map((post: Post, index: number) => (
         <div key={post.id}>
-          <Link href="/">
+          <Link href={`/blog/${post.id}`}>
             <article className="group cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
               <div className="aspect-video overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100">
                 <img
