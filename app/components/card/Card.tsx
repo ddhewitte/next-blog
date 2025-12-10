@@ -1,4 +1,5 @@
 import { Post, getPosts } from "@/app/lib/api"
+import { staticImages } from "@/app/lib/data";
 
 export default async function Card() {
 
@@ -6,11 +7,11 @@ export default async function Card() {
 
     return (
     <>
-        { getPostLists.slice(0,6).map( (post : Post) => (
+        { getPostLists.slice(0,6).map( (post : Post, index: number) => (
             <article key={post.id} className="group cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
             <div className="aspect-video overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100">
                 <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&amp;h=600&amp;fit=crop"
+                src={staticImages[index]}
                 alt="The Future of Web Development in 2025"
                 className="h-full w-full object-cover transition-transform duration-800 group-hover:scale-105"
                 />
@@ -19,7 +20,7 @@ export default async function Card() {
             <div className="p-6">
                 <div className="mb-3 flex items-center gap-2">
                 <span className="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-700">
-                    Technology
+                    New Article
                 </span>
                 </div>
                 <h2 className="mb-3 line-clamp-2 text-slate-900 transition-colors group-hover:text-blue-600">

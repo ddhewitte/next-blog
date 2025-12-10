@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import { headerMenu, headerTitle } from "./lib/data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
-          <Header></Header>
+          <Header menu={headerMenu} title={headerTitle}></Header>
           <main className="container mx-auto px-4 py-8 max-w-7xl">
             {children}
           </main>
